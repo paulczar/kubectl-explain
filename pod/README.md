@@ -1,5 +1,7 @@
 # kubectl explain pod
 
+[$ kubectl explain](../)
+
 A pod is the base level of compute provided by Kubernetes. Think of it as the smallest deployable unit of computing.
 
 A Pod is not an application, it's not a container, it is actually a collection of compute resources that are assigned to be used by one or more containers in which your application runs.
@@ -80,3 +82,6 @@ spec:
 ```
 
 ![a pod containing nginx and a git pull init container](./pod-basic-nginx-clone.drawio.png)
+
+
+[$ kubectl explain](../)
