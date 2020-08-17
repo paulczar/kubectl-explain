@@ -2,6 +2,8 @@
 
 [$ kubectl explain](../)
 
+[![youtube preview](http://img.youtube.com/vi/E52yBVYcNz4/0.jpg)](http://www.youtube.com/watch?v=E52yBVYcNz4 "$kubectl explain pod")
+
 A pod is the base level of compute provided by Kubernetes. Think of it as the smallest deployable unit of computing.
 
 A Pod is not an application, it's not a container, it is actually a collection of compute resources that are assigned to be used by one or more containers in which your application runs.
