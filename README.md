@@ -7,4 +7,4 @@ found inside Kubernetes.
 
 Available Commands:
 
-* [$ kubectl explain pods](./pod/README.md)
+* [$ kubectl explain pod](./pod/README.md)

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: website
+spec:
+  initContainers:
+  - name: git-clone
+    image: alpine/git
+    command: ["git"]
+    args: ["clone", "https://github.com/paulczar/kubectl-explain.git", "/www"]
+    volumeMounts:
+    - mountPath: /www
+      name: www
+  containers:
+    - name: nginx
+      image: nginx:latest
+      volumeMounts:
+      - mountPath: /usr/share/nginx/html
+        name: www
+  volumes:
+  - name: www
+    emptyDir: {}

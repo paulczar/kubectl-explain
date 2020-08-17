@@ -1,3 +1,5 @@
+# kubectl explain pod
+
 A pod is the base level of compute provided by Kubernetes. Think of it as the smallest deployable unit of computing.
 
 A Pod is not an application, it's not a container, it is actually a collection of compute resources that are assigned to be used by one or more containers in which your application runs.
@@ -24,6 +26,7 @@ Let's put this into practice...
 
 ## Basic NGINX Pod
 
+<table><tr><td>
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -41,9 +44,9 @@ spec:
         memory: "128Mi"
         cpu: "500m"
 ```
-
+</td><td>
 ![a minimal nginx pod](./pod-basic-nginx.drawio.png)
-
+</td></tr></table>
 ## NGINX Pod with volume and init container
 
 ```yaml
@@ -56,17 +59,22 @@ spec:
   - name: git-clone
     image: alpine/git
     command: ["git"]
-    args: ["clone", "https://github.com/paulczar/kubectl-explain.git" "/var/www/html"]
+    args:
+      - "clone"
+      - "https://github.com/paulczar/kubectl-explain.git"
+      - "/var/www/html"
     volumeMounts:
-    - mountPath: /var/www/html
-      name: website
-containers:
+    - mountPath: /usr/share/nginx/html
+      name: www
+  containers:
   - name: nginx
     image: nginx:latest
     volumeMounts:
-    - mountPath: /var/www/html
-      name: website
+    - mountPath: /usr/share/nginx/html
+      name: www
   volumes:
-  - name: website
+  - name: www
     emptyDir: {}
 ```
+
+![a pod containing nginx and a git pull init container](./pod-basic-nginx.drawio.png)
