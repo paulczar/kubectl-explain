@@ -1,4 +1,4 @@
-# kubectl explain pod
+# $ kubectl explain pod
 
 [$ kubectl explain](../)
 

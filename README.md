@@ -1,10 +1,9 @@
-# kubectl explain
+# $ kubectl explain
 
-**$ kubectl help explain**
 
-This command explains the resources and concepts
+This Video/Blog series explains the resources and concepts
 found inside Kubernetes.
 
-Available Commands:
+Available Episodes:
 
 * [$ kubectl explain pod](./pod/README.md)
