@@ -26,7 +26,8 @@ Let's put this into practice...
 
 ## Basic NGINX Pod
 
-<table><tr><td>
+This is a minimal NGINX Pod that will be scheduled to a node with at least 64mb of memory and a quarter of a CPU Core (250 millicpu) but will be restricted to no more than 128 Megabytes of memory and half a CPU core.
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -44,10 +45,11 @@ spec:
         memory: "128Mi"
         cpu: "500m"
 ```
-</td><td>
 ![a minimal nginx pod](./pod-basic-nginx.drawio.png)
-</td></tr></table>
+
 ## NGINX Pod with volume and init container
+
+This extends the above Pod and adds an `initContainer` that will clone down the contents of a git repository into a volume that is shared with the `nginx` container.
 
 ```yaml
 apiVersion: v1
@@ -77,4 +79,4 @@ spec:
     emptyDir: {}
 ```
 
-![a pod containing nginx and a git pull init container](./pod-basic-nginx.drawio.png)
+![a pod containing nginx and a git pull init container](./pod-basic-nginx-clone.drawio.png)
