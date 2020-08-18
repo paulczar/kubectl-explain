@@ -86,4 +86,9 @@ spec:
 ![a pod containing nginx and a git pull init container](./pod-basic-nginx-clone.drawio.png)
 
 
+## Sources & Further Reading
+
+* [Kubernetes Docs - Pods](https://kubernetes.io/docs/concepts/workloads/pods/)
+* [Kubernetes Docs - Managing Resources for Containers](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/)
+
 [$ kubectl explain](../)
