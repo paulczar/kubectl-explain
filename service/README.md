@@ -2,7 +2,7 @@
 
 [$ kubectl explain](../)
 
-<!---[![youtube preview](http://img.youtube.com/vi/ursPwmJbGW8/0.jpg)](http://www.youtube.com/watch?v=/ursPwmJbGW8 "$kubectl explain service") -->
+[![youtube preview](http://img.youtube.com/vi/ursPwmJbGW8/0.jpg)](http://www.youtube.com/watch?v=/ursPwmJbGW8 "$kubectl explain service")
 
 ```bash
 $ kubectl explain service
