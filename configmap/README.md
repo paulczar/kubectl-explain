@@ -44,13 +44,11 @@ Ordinarily I wouldn't mix literal and file based key/value pairs in the same Con
 You could also create a ConfigMap from the command line like so:
 
 ```bash
-kubectl create configmap my-config --from-literal="port=8080"
-```
+kubectl create configmap app-config \
+  --from-literal="port=8080" \
+  --from-literal="ip=0.0.0.0" \
+  --from-file="config.properties"
 
-or
-
-```bash
-kubectl create configmap my-config --from-file="./config.properties"
 ```
 
 You can then access ConfigMap from a pod using the key value pairs as environment variables or files in a volume.
@@ -123,7 +121,7 @@ spec:
     image: docker.io/user/my-app
     envFrom:
     - configMapRef:
-        name: my-config
+        name: app-config
     command: ["/opt/app/bin/start"]
     args: ["--port", "${port}, --ip ${ip}"]
 ```
@@ -145,12 +143,12 @@ spec:
     - name: MYAPP_PORT
       valueFrom:
         configMapKeyRef:
-          name: my-config
+          name: app-config
           key: port
     - name: MYAPP_IP
       valueFrom:
         configMapKeyRef:
-          name: my-config
+          name: app-config
           key: ip
 ```
 
