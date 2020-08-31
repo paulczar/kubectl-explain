@@ -8,3 +8,4 @@ Available Episodes:
 
 * [$ kubectl explain pod](./pod/README.md)
 * [$ kubectl explain service](./service/README.md)
+* [$ kubectl explain configmap](./configmap/README.md) (also secrets)

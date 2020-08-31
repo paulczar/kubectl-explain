@@ -2,7 +2,9 @@
 
 [$ kubectl explain](../)
 
-<!---[![youtube preview](http://img.youtube.com/vi/E52yBVYcNz4/0.jpg)](http://www.youtube.com/watch?v=E52yBVYcNz4 "$kubectl explain pod") -->
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/Fy6nQOeGb5w">
+</iframe>
 
 A ConfigMap is an API object used to store data in key-value pairs. ConfigMaps are designed for non-confidential text based data. For confidential data you would use a [Secret](../secret) which we will talk about later. While ConfigMaps are text based, its not uncommon to encode small amounts of binary data using `base64` or a similar text based encoding method to be used in a ConfigMap. I won't tell you not to do that, but I will sit here and quietly judge you for it.
 
